@@ -13,7 +13,7 @@ const tutorials = [
 
 const titleCased = () => {
   const tutorialsTitleCase = tutorials.map((title) => {
-    const words = title.split(",") 
+    const words = title.split(" ") 
     const capWords = words.map((word) => {
       return word.split("").map((char, index) => {
           if (index === 0) {
@@ -23,9 +23,9 @@ const titleCased = () => {
             return char
           }
       }).join("")
-    }).join("")
+    }).join(" ")
     return capWords
-  }
+  })
   return tutorialsTitleCase
   
 }
