@@ -14,23 +14,21 @@ const tutorials = [
 const titleCased = () => {
   const tutorialsTitleCase = tutorials.map((title) => {
     const words = title.split(",") 
-    const letters = words.map((word) => {
-      return word.split("")
-    }) 
-
-    const capWords = letters.map((char, index) => {
-      if (index === 0) {
-        return char[0].toUpperCase()
-
-      }else {
-        return char
-      }
+    const capWords = words.map((word) => {
+      return word.split("").map((char, index) => {
+          if (index === 0) {
+            return char.toUpperCase()
+    
+          }else {
+            return char
+          }
+      }).join("")
     }).join("")
     return capWords
-  }).join("")
+  }
   return tutorialsTitleCase
   
-  }
+}
   
 
 
